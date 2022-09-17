@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <button class="rock">Rock</button>
-        <button class="paper">Paper</button>
-        <button class="scissors">Scissors</button>
+        <button class="rock" onclick="getComputerChoice(), playRound('ROCK', compChoice), winner()">Rock</button>
+        <button class="paper" onclick="getComputerChoice(), playRound('PAPER', compChoice), winner()">Paper</button>
+        <button class="scissors" onclick="getComputerChoice(), playRound('SCISSORS', compChoice), winner()">Scissors</button>
+        <div class="compChoiceContainer">Comp Choice:<div class="compChoice"></div></div>
+        <div class="playerScore">0</div>
+        <div class="compScore">0</div>
+        <div class="winner"></div>
     </div>
 </body>
 <script src="index.js"></script>
