@@ -2,17 +2,15 @@ const choices = ['SCISSORS', 'ROCK', 'PAPER']
 let compChoice;
 let pwins = 0; let cwins = 0;
 let playerChoice;
+let rockBtn = document.querySelector('.rock');
+let paperBtn = document.querySelector('.paper');
+let scissorsBtn = document.querySelector('.scissors');
 
 function getComputerChoice () {
     compChoice = Math.floor(Math.random() * choices.length);
     compChoice = choices[compChoice];
     console.log(compChoice);
 
-}
-
-function getPlayerChoice () {
-    playerChoice = prompt('Choose');
-    playerChoice = playerChoice.toUpperCase();
 }
 
 function playRound (pChoice, cChoice) {
@@ -46,19 +44,11 @@ function playRound (pChoice, cChoice) {
         }
 }
 
-function game() {
-    for (let i = 0; i < 5; i++){
-        getPlayerChoice();
-        getComputerChoice();
-        playRound( playerChoice , compChoice);
-    }
-    if (pwins > cwins) {
-        console.log('You Won!');
-    } else {
-        console.log('You Lost!');
-    }
-}
+rockBtn.addEventListener('click', getComputerChoice);
+rockBtn.addEventListener('click', function () {playRound('ROCK', compChoice)});
 
-game();
+paperBtn.addEventListener('click', getComputerChoice);
+paperBtn.addEventListener('click', function () {playRound('PAPER', compChoice)});
 
-stop();
+scissorsBtn.addEventListener('click', getComputerChoice);
+scissorsBtn.addEventListener('click', function () {playRound('SCISSORS', compChoice)});
